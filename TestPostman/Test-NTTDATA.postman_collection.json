@@ -15,7 +15,8 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
-							"});"
+							"});\r",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -26,7 +27,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"password\":\"MTIzNDU2\",\r\n    \"username\":\"juan10\"\r\n}",
+					"raw": "{\r\n    \"password\":\"MTIzNDU2\",\r\n    \"username\":\"juan23\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -54,6 +55,9 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"This user already exist.\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"This user already exist.\");\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -100,7 +104,9 @@
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
-							"\r",
+							"pm.test(\"Login - Return token ok\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Auth_token\");\r",
+							"});\r",
 							""
 						],
 						"type": "text/javascript"

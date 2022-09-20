@@ -1,18 +1,18 @@
 {
-	"id": "c5e25dfd-7abf-4c5d-99ed-09d8cce2e699",
+	"id": "e8008c9c-8835-44c7-9f3a-f4e2a125f7b2",
 	"name": "Test-NTTDATA",
-	"timestamp": "2022-09-20T22:08:54.952Z",
+	"timestamp": "2022-09-20T22:41:44.497Z",
 	"collection_id": "17225632-dccad64d-70f2-4406-a366-f277d6b26304",
 	"folder_id": 0,
 	"environment_id": "17225632-87b916a6-2322-4f00-8e6b-648362bd04c6",
-	"totalPass": 4,
+	"totalPass": 6,
 	"totalFail": 0,
 	"results": [
 		{
 			"id": "40d21945-d387-4eac-a2c8-5d44bd202768",
 			"name": "Create User",
 			"url": "https://api.demoblaze.com/signup",
-			"time": 459,
+			"time": 191,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -27,7 +27,7 @@
 				}
 			},
 			"times": [
-				459
+				191
 			],
 			"allTests": [
 				{
@@ -39,26 +39,32 @@
 			"id": "8e163e22-c427-44d3-93d4-059e0345cd6e",
 			"name": "User exist",
 			"url": "https://api.demoblaze.com/signup",
-			"time": 164,
+			"time": 186,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
 			},
 			"tests": {
-				"Status code is 200": true
+				"Status code is 200": true,
+				"This user already exist.": true
 			},
 			"testPassFailCounts": {
 				"Status code is 200": {
 					"pass": 1,
 					"fail": 0
+				},
+				"This user already exist.": {
+					"pass": 1,
+					"fail": 0
 				}
 			},
 			"times": [
-				164
+				186
 			],
 			"allTests": [
 				{
-					"Status code is 200": true
+					"Status code is 200": true,
+					"This user already exist.": true
 				}
 			]
 		},
@@ -66,14 +72,15 @@
 			"id": "378c4d47-faee-4ee3-8bba-69e84e7ff402",
 			"name": "Login",
 			"url": "https://api.demoblaze.com/login",
-			"time": 264,
+			"time": 224,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
 			},
 			"tests": {
 				"Validate format json": true,
-				"Status code is 200": true
+				"Status code is 200": true,
+				"Login - Return token ok": true
 			},
 			"testPassFailCounts": {
 				"Validate format json": {
@@ -83,21 +90,26 @@
 				"Status code is 200": {
 					"pass": 1,
 					"fail": 0
+				},
+				"Login - Return token ok": {
+					"pass": 1,
+					"fail": 0
 				}
 			},
 			"times": [
-				264
+				224
 			],
 			"allTests": [
 				{
 					"Validate format json": true,
-					"Status code is 200": true
+					"Status code is 200": true,
+					"Login - Return token ok": true
 				}
 			]
 		}
 	],
 	"count": 1,
-	"totalTime": 887,
+	"totalTime": 601,
 	"collection": {
 		"requests": [
 			{
