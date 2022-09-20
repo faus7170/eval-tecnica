@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "dccad64d-70f2-4406-a366-f277d6b26304",
+		"name": "Test-NTTDATA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17225632"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\":\"MTIzNDU2\",\r\n    \"username\":\"juan10\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{testurl}}/signup",
+					"host": [
+						"{{testurl}}"
+					],
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User exist",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\":\"MTIzNDU2\",\r\n    \"username\":\"pepito0001\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{testurl}}/signup",
+					"host": [
+						"{{testurl}}"
+					],
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let json=JSON.parse(responseBody);\r",
+							"pm.globals.set(\"Auth_token\",json.Auth_token);\r",
+							"\r",
+							"pm.test(\"Validate format json\", () => {\r",
+							"pm.response.to.have.jsonBody();\r",
+							"});\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "password",
+						"value": "{{password}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "username",
+						"value": "{{username}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\": \"MTIzNDU2\",\r\n    \"username\": \"pepito2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{testurl}}/login",
+					"host": [
+						"{{testurl}}"
+					],
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"disabled": true
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

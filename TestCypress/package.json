@@ -1,0 +1,21 @@
+{
+  "name": "evaluacion-practica",
+  "version": "1.0.0",
+  "description": "ejercicios practicos",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open --browser chrome --e2e"
+  },
+  "keywords": [
+    "cypress",
+    "ntt-data",
+    "testing",
+    "javascript",
+    "typescript"
+  ],
+  "author": "Fausto Lamiña",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^10.8.0"
+  }
+}
