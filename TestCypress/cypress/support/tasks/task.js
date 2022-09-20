@@ -3,8 +3,11 @@
     constructor(){
 
     }
+    visit(url){
+        cy.visit(url)
+        cy.wait(500)
+    }
       addProduct(product,bnt,msg){
-        
         cy.contains(product).click() 
         cy.contains(bnt).click() 
         cy.wait(500)

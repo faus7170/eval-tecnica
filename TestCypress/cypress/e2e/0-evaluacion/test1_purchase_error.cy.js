@@ -15,27 +15,23 @@ context('Test1-purchase-error', () => {
     })
   
     it('addproduct - Add product to cart', () => {
-        task1.addProduct('Samsung galaxy s6','Add to cart',"Product added")
-        task1.pathShop('.nav-link','Cart',500)
-        task1.pathShop('.nav-link','Home',500)
-        task1.addProduct("Nokia lumia 1520",'Add to cart',"Product added")
-        task1.pathShop('.nav-link','Cart',1500)
-    })
+        task1.visit(homCall.url())
+        task1.addProduct(homCall.prod1(),homCall.addToCar(),homCall.proddAddConf())
+        task1.pathShop(homCall.navlink(),homCall.linkcart(),500)
+        task1.pathShop(homCall.prod1(),homCall.linkcart(),500)
+        task1.addProduct(homCall.prod2(),homCall.addToCar(),homCall.proddAddConf())
+        task1.pathShop(homCall.prod1(),homCall.linkcart(),1500)
  
     it('shop - Checkout', () => {
-        task1.pathShop('.nav-link','Cart',1500)
-        cy.get('.btn-success').click()
+        task1.pathShop(homCall.prod1(),homCall.linkcart(),1500)
+        cy.get(homCall.btnsucces()).click()
         cy.wait(1500)
         cy.get('@customers').then((customers) => {
-            cy.log(customers)
-            const client = customers     
-           // task1.shopProduct(client)
+            const client = customers   
+            // task1.shopProduct(client)
         })
-        cy.get('.btn').contains('Purchase').click()
-        
-        cy.on("window:confirm", (t) => {
-            expect(t).to.equal('Please fill out Name and Creditcard.');
-            cy.contains('Please fill out Name and Creditcard.').should('Please fill out Name and Creditcard.')
-         });
+        cy.get(homCall.btn()).contains('Purchase').click()
+        cy.contains('Thank you for your purchase!').should('contain.text','Thank you for your purchase!')
+    })
     })
 })  

@@ -2,22 +2,39 @@ export class home{
     constructor(){
 
     }
-    visit(){
-        cy.visit("https://www.demoblaze.com/index.html")
-        cy.wait(500)
+    url() {
+        var url = 'https://www.demoblaze.com/index.html';
+        return url;
     }
     prod1(){
-        
-        return "Samsung galaxy s6"
+        var prod ="Samsung galaxy s6"
+        return prod
     }
     prod2(){
-        return "Samsung galaxy s6"
+        var prod ="Nokia lumia 1520"
+        return prod
     }
     addToCar(){
-        return "Add to cart"
+        var add ="Add to cart"
+        return add
     }
     proddAddConf(){
         return "Product added"
+    }
+    navlink(){
+        return ".nav-link"
+    }
+    btnsucces(){
+        return '.btn-success'
+    }
+    btn(){
+        return '.btn'
+    }
+    linkcart(){
+        return 'Cart'
+    }
+    linkhome(){
+        return 'Home'
     }
 
 }
