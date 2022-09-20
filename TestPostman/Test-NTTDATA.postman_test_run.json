@@ -1,7 +1,7 @@
 {
-	"id": "a9f53d2b-4cfc-4f99-8dea-6cb5ed750ac8",
+	"id": "c5e25dfd-7abf-4c5d-99ed-09d8cce2e699",
 	"name": "Test-NTTDATA",
-	"timestamp": "2022-09-20T20:49:51.555Z",
+	"timestamp": "2022-09-20T22:08:54.952Z",
 	"collection_id": "17225632-dccad64d-70f2-4406-a366-f277d6b26304",
 	"folder_id": 0,
 	"environment_id": "17225632-87b916a6-2322-4f00-8e6b-648362bd04c6",
@@ -12,7 +12,7 @@
 			"id": "40d21945-d387-4eac-a2c8-5d44bd202768",
 			"name": "Create User",
 			"url": "https://api.demoblaze.com/signup",
-			"time": 434,
+			"time": 459,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -27,7 +27,7 @@
 				}
 			},
 			"times": [
-				434
+				459
 			],
 			"allTests": [
 				{
@@ -39,7 +39,7 @@
 			"id": "8e163e22-c427-44d3-93d4-059e0345cd6e",
 			"name": "User exist",
 			"url": "https://api.demoblaze.com/signup",
-			"time": 172,
+			"time": 164,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -54,7 +54,7 @@
 				}
 			},
 			"times": [
-				172
+				164
 			],
 			"allTests": [
 				{
@@ -66,7 +66,7 @@
 			"id": "378c4d47-faee-4ee3-8bba-69e84e7ff402",
 			"name": "Login",
 			"url": "https://api.demoblaze.com/login",
-			"time": 243,
+			"time": 264,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -86,7 +86,7 @@
 				}
 			},
 			"times": [
-				243
+				264
 			],
 			"allTests": [
 				{
@@ -97,7 +97,7 @@
 		}
 	],
 	"count": 1,
-	"totalTime": 849,
+	"totalTime": 887,
 	"collection": {
 		"requests": [
 			{
